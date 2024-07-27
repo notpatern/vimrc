@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "darkrose"
+	color = color or "cyberdream"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -30,15 +30,18 @@ return {
         end
     },
 
-    { "water-sucks/darkrose.nvim",
-        priority = 1000 ,
+    {
+    "scottmckendry/cyberdream.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
-            require('darkrose').setup({
+            require('cyberdream').setup({
                 disable_background = true,
             })
 
-            vim.cmd("colorscheme darkrose")
+            vim.cmd("colorscheme cyberdream")
 
             ColorMyPencils()
-        end},
+        end,
+    }
 }
